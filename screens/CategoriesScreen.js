@@ -1,6 +1,6 @@
 import CategoryGridTile from "../components/CategoryGridTile";
 import { CATEGORIES } from "../data/dummy-data";
-import { FlatList } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 
 function CategoriesScreen({navigation}){
     function renderCategoryItem(itemData){
@@ -24,8 +24,15 @@ function CategoriesScreen({navigation}){
             keyExtractor={(item) => item.id} 
             renderItem={renderCategoryItem}
             numColumns={2}
+            style= {styles.screen}
         />
     );
 }
 
 export default CategoriesScreen;
+
+const styles = StyleSheet.create({
+    screen: {
+        backgroundColor: '#3f2f25'
+    }
+});
